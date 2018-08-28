@@ -1,25 +1,28 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-    <a href="{% url 'logout' %}">Sair</a>
+{% block title %} Bem vindo {% endblock %}
 
-    <ul>
+{% block main %}
+
+    <div class="row">
+    <div class="col">
+
+    </div>
+    <div class="col-6">
+       <ul class="list-group">
         {% for person in persons %}
-            <li>
+            <li class="list-group-item">
                 <a href="{% url 'person_update' person.id %}">{{ person.first_name }}</a>
-                <a href="{% url 'person_delete' person.id %}">Deletar</a>
+                <a href="{% url 'person_delete' person.id %}" class="btn btn-danger">Deletar</a>
             </li>
         {% endfor%}
     </ul>
 
-    <a href="{% url 'person_new' %}">Novo</a>
-</body>
-</html>
+    <a href="{% url 'person_new' %}" class="btn btn-primary">Novo</a>
+    </div>
+    <div class="col">
+      <a href="{% url 'logout' %}">Sair</a>
+    </div>
+  </div>
+
+{% endblock %}

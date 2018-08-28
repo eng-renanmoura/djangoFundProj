@@ -14,4 +14,5 @@ python manage.py runserver <br/>
 python manage.py createsuperuser<br/>
 python manage.py startapp home <br/>
 pip install psycopg2 <br/>
-https://github.com/Gpzim98/django-heroku <br/> 
+https://github.com/Gpzim98/django-heroku <br/>
+pip install django-bootstrap-form <br /> 
